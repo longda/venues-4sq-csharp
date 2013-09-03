@@ -14,12 +14,23 @@ namespace le_secret_venue
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                name: "API EXPLORE",
+                name: "DATA API EXPLORE",
                 url: "data/explore/{near}/",
                 defaults: new
                 {
                     controller = "Data",
                     action = "Explore",
+                    near = UrlParameter.Optional,
+                }
+            );
+
+            routes.MapRoute(
+                name: "DATA API FOURSQUARE",
+                url: "data/foursquare/{near}/",
+                defaults: new
+                {
+                    controller = "Data",
+                    action = "Foursquare",
                     near = UrlParameter.Optional,
                 }
             );

@@ -10,7 +10,7 @@ $(document).ready(function () {
         // new logic
         var near = $('#near').val();
         $.ajax({
-            url: "http://localhost:52382/data/explore/" + near
+            url: "http://localhost:52382/data/foursquare/" + near
         }).done(function (data) {
             $('#data-table-body').html('');
 
