@@ -4,7 +4,7 @@
         <meta charset="utf-8" />
         <title>@ViewBag.Title - Digital Arts Network</title>
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-        <meta name="viewport" content="width=device-width" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="~/Content/lib/bootstrap/css/bootstrap.css" />
         <style>
             body
@@ -12,7 +12,7 @@
                 padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
             }
         </style>
-        <link rel="stylesheet" href="~/Content/lib/bootstrap/css/bootstrap-responsive.css" />
+        @*<link rel="stylesheet" href="~/Content/lib/bootstrap/css/bootstrap-responsive.css" />*@
 
         @*@Styles.Render("~/Content/css")*@
         @*@Scripts.Render("~/bundles/modernizr")*@
@@ -20,23 +20,23 @@
     </head>
     <body>
         <div class="navbar navbar-inverse navbar-fixed-top">
-          <div class="navbar-inner">
             <div class="container">
-              <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="brand" href="#">Le Secret Venue</a>
-              <div class="nav-collapse collapse">
-                <ul class="nav">
-                  <li class="active"><a href="#">Home</a></li>
-                  <li><a href="#about">Info</a></li>
-                  <li><a href="#contact">Help</a></li>
-                </ul>
-              </div><!--/.nav-collapse -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Le Secret Venue</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#about">Info</a></li>
+                        <li><a href="#contact">Help</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
             </div>
-          </div>
         </div>
 
         <div class="container">
@@ -46,7 +46,7 @@
         <script id="data_temp" type="text/html">
             <tr>
                 <td>{{ venue.name }}</td>
-                <td>{{ venue.location.address }} {{ venue.location.city }}, {{venue.location.state }} {{ venue.location.postalCode }}</td>
+                <td>{{ venue.location.address }} {{ venue.location.city }}, {{ venue.location.state }} {{ venue.location.postalCode }}</td>
                 <td>{{ venue.rating }}</td>
                 <td>{{ venue.likes.count }}</td>
                 <td>{{ venue.stats.checkinsCount }}</td>

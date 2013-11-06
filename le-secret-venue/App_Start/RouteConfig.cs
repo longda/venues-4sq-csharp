@@ -14,6 +14,28 @@ namespace le_secret_venue
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "INSTAGRAM FOURSQUARE LOOKUP",
+                url: "instagram/foursquarelookup/{foursquare_v2_id}/",
+                defaults: new
+                {
+                    controller = "Instagram",
+                    action = "FoursquareLookup",
+                    foursquare_v2_id = UrlParameter.Optional,
+                }
+            );
+
+            routes.MapRoute(
+                name: "INSTAGRAM VENUE",
+                url: "instagram/venue/{venue_id}/",
+                defaults: new
+                {
+                    controller = "Instagram",
+                    action = "Venue",
+                    venue_id = UrlParameter.Optional,
+                }
+            );
+
+            routes.MapRoute(
                 name: "DATA API EXPLORE",
                 url: "data/explore/{near}/",
                 defaults: new

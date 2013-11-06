@@ -16,7 +16,8 @@ $(document).ready(function () {
 
 
             data.response.groups[0].items.forEach(function(element, index, array){
-                data_html = ich.data_temp(element);
+                //data_html = ich.data_temp(element);
+                var data_html = ich.data_temp(element);
                 $('#data-table-body').append(data_html);
             });
 
